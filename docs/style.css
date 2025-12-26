@@ -1,22 +1,7 @@
-:root {
-  --orange: #FFA400;
-  --blue: #246EB9;
-  --purple: #56203D;
-  --green: #7EA172;
-  --lightblue: #B4CDED;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  margin: 0;
-  padding: 20px;
+  margin: 20px;
 }
 
 .container {
@@ -25,30 +10,36 @@ body {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.12);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1 {
   text-align: center;
-  color: var(--orange);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: #FFA400; /* main orange color */
 }
 
-label {
+.label-primary {
   display: block;
-  margin-top: 12px;
-  font-weight: bold;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #56203D;
 }
 
-input[type="text"],
-input[type="date"],
-textarea {
+.label-secondary {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #7EA172;
+}
+
+input[type="text"], input[type="date"], textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  margin-top: 4px;
+  margin-top: 5px;
+  border: 1px solid #B4CDED;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 textarea {
@@ -58,26 +49,50 @@ textarea {
 }
 
 button {
-  margin-top: 12px;
+  margin-top: 20px;
+  padding: 15px;
   width: 100%;
-  padding: 14px;
   font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: var(--orange);
+  background-color: #FFA400;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #ffb14d;
+  background-color: #F28C00;
 }
 
 .debug-btn {
-  width: auto;
   background-color: transparent;
-  color: #666;
-  border: 1px dashed #ccc;
-  padding: 6px 8px;
-  margin-left: 4px;
+  color: #56203D;
+  border: 1px dashed #B4CDED;
+  padding: 8px;
+  font-size: 12px;
+  width: auto;
+  margin-left: 8px;
 }
+
+.emoji-palette {
+  display: none;
+  gap: 6px;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.emoji-palette.show { display: flex; }
+
+.emoji-palette button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#qrArea img { width: 200px; height: 200px; }
