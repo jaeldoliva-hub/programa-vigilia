@@ -1,58 +1,60 @@
 document.getElementById("generateBtn").addEventListener("click", generate);
+document.getElementById("sendWhatsAppBtn").addEventListener("click", sendWhatsApp);
+
+function v(id) {
+  return document.getElementById(id).value.trim();
+}
 
 function generate() {
-  let o = [];
-  const v = id => document.getElementById(id).value.trim();
-  const real = t => t && !(t.startsWith("[") && t.endsWith("]"));
-
-  const list = t => real(t)
-    ? t.split("\n").filter(x=>x.trim()).map(x=>`- ${x}`).join("\n")
-    : "";
-
-  if (real(v("vigiliaTitulo")))
-    o.push(`*Vigilia ${v("vigiliaTitulo")}*`);
+  let msg = `*Vigilia ${v("vigiliaTitulo") || "[lema de la vigilia]"}*\n`;
 
   if (v("serviceDate")) {
-    const d = new Date(v("serviceDate")+"T00:00");
-    o.push(`_${d.toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"}).replace(/^./,c=>c.toUpperCase())}_`);
+    const d = new Date(v("serviceDate") + "T00:00");
+    msg += `_${formatDate(d)}_\n\n`;
   }
 
-  o.push("\n_*PARTE 1*_");
-  line(o,"Bienvenida en la puerta",v("p1Puerta"));
-  line(o,"Dirección",v("p1Direccion"));
-  line(o,"Alabanzas",v("p1Alabanzas"));
-  line(o,"Ofrendas",v("p1Ofrendas"));
+  msg += `_*PARTE 1*_\n`;
+  msg += `*Bienvenida en la puerta:* ${v("p1Puerta") || "[Hnos. Roger y Fany]"}\n`;
+  msg += `*Dirección:* ${v("p1Direccion") || "[Hno. Juan Carlos]"}\n`;
+  msg += `*Alabanzas:* ${v("p1Alabanzas") || "[nombre de hno]"}\n`;
+  msg += `*Ofrendas:* ${v("p1Ofrendas") || "Hnos. Santos y María"}\n`;
 
-  block(o,"Oración",list(v("p1Oracion")));
-  block(o,"Participaciones ( Testimonios de agradecimiento, alabanzas o palabras de motivación)",list(v("p1Participaciones")));
-  line(o,"Mensaje",v("p1Mensaje"));
+  msg += `*Oración:*\n${list(v("p1Oracion"))}`;
+  msg += `*⁠Participaciones ( Testimonios de agradecimiento, alabanzas o palabras de motivación)*\n${list(v("p1Participaciones"))}`;
+  msg += `*Mensaje:* ${v("p1Mensaje") || "Pastor Marvin Oliva"}\n\n`;
+  msg += `Bocadillos: ${v("bocadillos") || ""}\n\n`;
 
-  if (real(v("bocadillos"))) o.push(`\nBocadillos: ${v("bocadillos")}`);
+  msg += `_*PARTE 2*_\n`;
+  msg += `*Dinámica:* ${v("p2Dinamica") || "Hna María Elena"}\n`;
+  msg += `*Dirección:* ${v("p2Direccion") || "Hno. José Hdez."}\n`;
+  msg += `*Alabanzas:* ${v("p2Alabanzas") || "[nombre de hno]"}\n`;
 
-  o.push("\n_*PARTE 2*_");
-  line(o,"Dinámica",v("p2Dinamica"));
-  line(o,"Dirección",v("p2Direccion"));
-  line(o,"Alabanzas",v("p2Alabanzas"));
+  msg += `*Oración:*\n${list(v("p2Oracion"))}`;
+  msg += `*Participaciones ( Alabanzas, testimonios y palabras de ánimo)*\n${list(v("p2Participaciones"))}`;
+  msg += `*Alabanzas de adoración:* ${v("p2Adoracion") || ""}\n`;
+  msg += `*Mensaje:* ${v("p2Mensaje") || "Pastor Marvin Oliva"}\n`;
+  msg += `_Ministracion_`;
 
-  block(o,"Oración",list(v("p2Oracion")));
-  block(o,"Participaciones ( Alabanzas, testimonios y palabras de ánimo)",list(v("p2Participaciones")));
-
-  line(o,"Alabanzas de adoración",v("p2Adoracion"));
-  line(o,"Mensaje",v("p2Mensaje"));
-
-  if (real(v("ministracion"))) o.push("_Ministración_");
-
-  document.getElementById("whatsappMessage").value = o.join("\n");
+  document.getElementById("whatsappMessage").value = msg;
 }
 
-function line(arr,label,val){
-  if(val && !(val.startsWith("[") && val.endsWith("]")))
-    arr.push(`*${label}:* ${val}`);
-}
-
-function block(arr,label,val){
-  if(val){
-    arr.push(`*${label}:*`);
-    arr.push(val);
+function list(text) {
+  if (!text) {
+    return `- [peticion], [nombre de hno]\n- [peticion], [nombre de hno]\n- [peticion], [nombre de hno]\n`;
   }
+  return text.split("\n").filter(Boolean).map(l => `- ${l}`).join("\n") + "\n";
+}
+
+function formatDate(d) {
+  return d.toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+  }).replace(/^./, c => c.toUpperCase());
+}
+
+function sendWhatsApp() {
+  const msg = document.getElementById("whatsappMessage").value;
+  if (!msg) return alert("Primero genere el mensaje");
+  window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank");
 }
