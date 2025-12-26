@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Vigilia</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; }
+    input, textarea { width: 100%; margin-bottom: 10px; padding: 6px; }
+    button { padding: 10px; font-size: 16px; }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Vigilia</h2>
+
+<h3>Información general</h3>
+<input id="lema" placeholder="Lema de la vigilia">
+<input id="fecha" placeholder="Fecha (Ej: Miércoles 31 de Diciembre)">
+
+<h3>PARTE 1</h3>
+<input id="bienvenida1" placeholder="Bienvenida en la puerta">
+<input id="direccion1" placeholder="Dirección">
+<input id="alabanzas1" placeholder="Alabanzas">
+<input id="ofrendas1" placeholder="Ofrendas">
+
+<textarea id="oracion1a" placeholder="Petición 1 – Nombre"></textarea>
+<textarea id="oracion1b" placeholder="Petición 2 – Nombre"></textarea>
+<textarea id="oracion1c" placeholder="Petición 3 – Nombre"></textarea>
+
+<textarea id="participaciones1" placeholder="Participaciones (una por línea)"></textarea>
+<input id="mensaje1" placeholder="Mensaje – Parte 1">
+<input id="bocadillos" placeholder="Bocadillos">
+
+<h3>PARTE 2</h3>
+<input id="dinamica" placeholder="Dinámica">
+<input id="direccion2" placeholder="Dirección">
+<input id="alabanzas2" placeholder="Alabanzas">
+
+<textarea id="oracion2a" placeholder="Petición 1 – Nombre"></textarea>
+<textarea id="oracion2b" placeholder="Petición 2 – Nombre"></textarea>
+<textarea id="oracion2c" placeholder="Petición 3 – Nombre"></textarea>
+
+<textarea id="participaciones2" placeholder="Participaciones (una por línea)"></textarea>
+<input id="adoracion" placeholder="Alabanzas de adoración">
+<input id="mensaje2" placeholder="Mensaje – Parte 2">
+
+<button onclick="generarMensaje()">Generar mensaje</button>
+
+<h3>Mensaje final</h3>
+<pre id="output"></pre>
+
+<script src="vigilia.js"></script>
+</body>
+</html>
