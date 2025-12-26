@@ -1,184 +1,79 @@
-body {
-  font-family: Arial, sans-serif;
-  /* Background image with fallback color */
-  background-color: #b4cded;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed; /* optional: makes background stay when scrolling */
-  background-size: cover; /* cover entire viewport */
-  margin: 20px;
-  padding: 20px;
+:root {
+  --primary: #246EB9;
+  --accent: #56203D;
+  --success: #7EA172;
+  --soft: #B4CDED;
+  --highlight: #FFA400;
 }
 
-/* Optional dark overlay to improve text contrast. If you don't want an overlay, remove these rules. */
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background: rgba(0,0,0,0.25);
-  pointer-events: none; /* allow clicks through overlay */
-  z-index: -1; /* keep behind content */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, var(--soft), #fff);
+  margin: 20px;
 }
 
 .container {
-  max-width: 475px;
-  margin: auto;
+  max-width: 520px;
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  body { margin: 10px; padding: 10px; }
-  .container { padding: 14px; border-radius: 6px; }
-  button { padding: 12px; font-size: 15px; }
-  .debug-btn { padding: 6px 8px; font-size: 12px; }
-  .emoji-palette { gap: 4px; padding: 6px; }
-  .emoji-palette button { font-size: 18px; padding: 6px; }
+  margin: auto;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+h2 {
+  margin-top: 30px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--soft);
 }
 
 label {
+  margin-top: 14px;
   display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-/* Label variants */
-.label-primary {
-  display: block;
-  margin-top: 10px;
-  font-weight: 700;
-  font-size: 15px;
-  color: #005884;
-}
-
-.label-secondary {
-  display: block;
-  margin-top: 8px;
   font-weight: 600;
-  font-size: 15px;
-  color: #666666;
+  color: var(--primary);
 }
 
-input[type="text"],
-select,
-input[type="color"] {
+input, textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--soft);
 }
 
-/* textarea (invitation) styling */
-textarea#whatsappMessage {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: none; /* we'll auto-grow instead of manual resize */
-  overflow: hidden;
-  min-height: 44px;
+textarea {
+  resize: none;
 }
 
 button {
-  margin-top: 20px;
-  padding: 17px;
   width: 100%;
-  font-size: 16px;
-  background-color: #246eb9;
-  color: white;
+  margin-top: 22px;
+  padding: 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #7ea172;
+  background: #1e5fa0;
 }
 
-/* Debug button: less prominent but accessible */
-.debug-btn {
-  background-color: transparent;
-  color: #666;
-  border: 1px dashed #ccc;
-  padding: 8px 10px;
-  font-size: 12px;
-  width: auto;
-  display: inline-block;
-  margin-left: 8px;
-  opacity: 0.6;
-}
-.debug-btn:hover {
-  opacity: 1;
-  color: #222;
-  border-color: #bbb;
+button.secondary {
+  background: var(--success);
 }
 
-#generatedImage {
-  display: none;
-  margin-top: 20px;
-  max-width: 100%;
-  
-  border: 1px solid #ccc;
+#whatsappMessage {
+  margin-top: 18px;
+  background: #f8fafc;
+  border-left: 4px solid var(--highlight);
+  font-family: monospace;
 }
-
-a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #2d89ef;
-}
-
-/* emoji palette */
-.emoji-palette {
-  display: none; /* hidden by default, shown when input focused */
-  gap: 6px;
-  align-items: center;
-  /* will be positioned absolutely in JS so it floats above other content */
-  position: absolute;
-  z-index: 9999; /* ensure it's above other content */
-  background: white;
-  padding: 6px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-}
-.emoji-palette.show {
-  display: flex;
-}
-.emoji-palette button {
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 4px 6px;
-  margin: 0;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.emoji-palette button { pointer-events: auto; }
-.emoji-palette button:hover { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.06); }
-
-/* QR area styling */
-#qrArea img { width: 200px; height: 200px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
