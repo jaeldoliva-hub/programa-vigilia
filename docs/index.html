@@ -1,82 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programa de Vigilia</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa Vigilia</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h1>Programa de Vigilia</h1>
+  <h1>Programa Vigilia</h1>
 
-  <label class="label-primary">Lema de la Vigilia</label>
-  <input id="vigiliaTitulo" placeholder="Ej: Velad y Orad">
+  <div id="Recordatorio">
+    <label for="recordatorioMessage" class="label-secondary">Recordatorio:</label>
+    <input type="text" id="recordatorioMessage" placeholder="Ingrese su mensaje" data-emoji="true">
+    <div class="emoji-palette" aria-hidden="true" id="emojiPalette">
+      <button type="button" onclick="insertEmoji('🙏','recordatorioMessage')">🙏</button>
+      <button type="button" onclick="insertEmoji('😊','recordatorioMessage')">😊</button>
+      <button type="button" onclick="insertEmoji('🎵','recordatorioMessage')">🎵</button>
+      <button type="button" onclick="insertEmoji('❤️','recordatorioMessage')">❤️</button>
+    </div>
+  </div>
 
-  <label class="label-primary">Fecha</label>
-  <input type="date" id="serviceDate">
+  <form id="eventForm">
+    <label for="serviceDate" class="label-primary">Fecha del Servicio:</label>
+    <input type="date" id="serviceDate">
 
-  <hr>
+    <label for="dirige" class="label-primary">Dirección:</label>
+    <input type="text" id="dirige">
 
-  <h2>PARTE 1</h2>
+    <label for="alabanzas" class="label-primary">Alabanzas:</label>
+    <input type="text" id="alabanzas">
 
-  <label>Bienvenida en la puerta</label>
-  <input id="p1Puerta">
+    <label for="ofrendas" class="label-primary">Ofrendas:</label>
+    <input type="text" id="ofrendas">
 
-  <label>Dirección</label>
-  <input id="p1Direccion">
+    <label for="mensaje" class="label-primary">Mensaje:</label>
+    <input type="text" id="mensaje">
 
-  <label>Alabanzas</label>
-  <input id="p1Alabanzas">
+    <label for="puerta" class="label-primary">Puerta:</label>
+    <input type="text" id="puerta">
 
-  <label>Ofrendas</label>
-  <input id="p1Ofrendas">
+    <label for="parqueo" class="label-primary">Parqueo:</label>
+    <input type="text" id="parqueo">
 
-  <label>Oración (una por línea)</label>
-  <textarea id="p1Oracion"></textarea>
+    <label for="bocadillos" class="label-primary">Bocadillos:</label>
+    <input type="text" id="bocadillos">
+  </form>
 
-  <label>Participaciones (una por línea)</label>
-  <textarea id="p1Participaciones"></textarea>
+  <div id="sendToWhatsApp">
+    <label for="whatsappMessage" class="label-secondary">Invitación:</label>
+    <textarea id="whatsappMessage" rows="2" oninput="autoGrow(this)" placeholder="[texto adicional]"></textarea>
 
-  <label>Mensaje</label>
-  <input id="p1Mensaje">
+    <button onclick="sendToWhatsApp()">Enviar a WhatsApp</button>
+    <button class="debug-btn" onclick="debugWhatsAppUrl()">Debug URL</button>
+  </div>
 
-  <label>Bocadillos</label>
-  <input id="bocadillos">
-
-  <hr>
-
-  <h2>PARTE 2</h2>
-
-  <label>Dinámica</label>
-  <input id="p2Dinamica">
-
-  <label>Dirección</label>
-  <input id="p2Direccion">
-
-  <label>Alabanzas</label>
-  <input id="p2Alabanzas">
-
-  <label>Oración (una por línea)</label>
-  <textarea id="p2Oracion"></textarea>
-
-  <label>Participaciones (una por línea)</label>
-  <textarea id="p2Participaciones"></textarea>
-
-  <label>Alabanzas de adoración</label>
-  <input id="p2Adoracion">
-
-  <label>Mensaje</label>
-  <input id="p2Mensaje">
-
-  <button id="generateBtn">Generar Mensaje</button>
-  <button id="sendWhatsAppBtn">Enviar por WhatsApp</button>
-
-  <label class="label-secondary">Salida WhatsApp</label>
-  <textarea id="whatsappMessage" rows="18"></textarea>
+  <div id="whatsappDebug" aria-live="polite" style="margin-top:12px; padding:10px; border:1px dashed #ccc; background:#fafafa; display:none;"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
