@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VIGILIA</title>
+  <title>Programa Vigilia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Programa de Culto</h1>
+    <h1>Programa de Vigilia</h1>
    
     <div id="Recordatorio" >
       <label for="recordatorioMessage" class="label-secondary">Recordatorio:</label>
@@ -21,30 +21,68 @@
       </div>
     </div>
 
-    <form id="eventForm">
+  <h2>Vigilia</h2>
+
+  <label class="label-primary" for="vigiliaTitulo">Título / Lema de la Vigilia:</label>
+        <input type="text" id="vigiliaTitulo" placeholder="Ej: Unidos en Oración">
+  
   <label for="serviceDate" class="label-primary">Fecha del Servicio:</label>
       <input type="date" id="serviceDate" placeholder="Ej: 15 de Septiembre, 2025">
 
-  <label for="dirige" class="label-primary">Dirige:</label>
-      <input type="text" id="dirige" placeholder="Ingrese Nombre de Hno(a)">
+ <h3>PARTE 1</h3>
 
-  <label for="ofrendas" class="label-primary">Ofrendas:</label>
-      <input type="text" id="ofrendas" placeholder="Ingrese Nombre de Hno(a)">
+  <label class="label-primary" for="Puerta">Bienvenida en la puerta:</label>
+      <input type="text" id="p1Puerta" placeholder="Ingrese Nombre de Hno(a)">
+  
+  <label class="label-primary" for="p1Direccion">Dirección:</label>
+      <input type="text" id="p1Direccion" placeholder="Ingrese Nombre de Hno(a)">
+  
+  <label class="label-primary" for="p1Alabanzas">Alabanzas:</label>
+      <input type="text" id="p1Alabanzas" placeholder="Ingrese Nombre de Hno(a)">
+  
+  <label class="label-primary" for="Ofrendas">Ofrendas:</label>
+      <input type="text" id="Ofrendas" placeholder="Ingrese Nombre de Hno(a)">
 
-  <label for="alabanzas" class="label-primary">Alabanzas:</label>
-      <input type="text" id="alabanzas" placeholder="Ingrese Nombre de Hno(a)">
+  <label class="label-primary" for="p1Oracion">Oración (una por línea):</label>
+    <textarea id="p1Oracion" rows="4" placeholder="Ej:
+Sanidad, Hna. Ana
+Fortaleza, Hno. Luis"></textarea>
 
-  <label for="mensaje" class="label-primary">Mensaje:</label>
-      <input type="text" id="mensaje" placeholder="Ingrese Nombre de Hno(a)">
+  <label class="label-primary" for="p1Participaciones">Participaciones (una por línea):</label>
+    <textarea id="p1Participaciones" rows="4" placeholder="Ej:
+Hnos. Pedro y María – testimonio
+Grupo juvenil – alabanza"></textarea>
+ 
+  <label class="label-primary" for="p1Mensaje">Mensaje:</label>
+    <input type="text" id="p1Mensaje" placeholder="Ingrese Nombre">
 
-  <label for="puerta" class="label-primary">Puerta:</label>
-      <input type="text" id="puerta" placeholder="Ingrese Nombre de Hno(a)">
+<label class="label-primary" for="bocadillos">Bocadillos (opcional):</label>
+    <input type="text" id="bocadillos" placeholder="Ingrese nombre de Hnos">
 
-  <label for="parqueo" class="label-primary">Parqueo:</label>
-      <input type="text" id="parqueo" placeholder="Ingrese Nombre de Hno(a)">
+    <h3>PARTE 2</h3>
 
-  <label for="bocadillos" class="label-primary">Bocadillos:</label>
-      <input type="text" id="bocadillos" placeholder="Ingrese Nombre">
+    <label class="label-primary" for="p2Dinamica">Dinámica:</label>
+    <input type="text" id="p2Dinamica" placeholder="Ingrese Nombre de Hno(a)">
+
+  <label class="label-primary" for="p2Direccion">Dirección:</label>
+  <input type="text" id="p2Direccion" placeholder="Ingrese Nombre de Hno(a)">
+  
+  <label class="label-primary" for="p2Alabanzas">Alabanzas:</label>
+  <input type="text" id="p2Alabanzas">
+  
+  <label class="label-primary" for="p2Oracion">Oración (una por línea):</label>
+  <textarea id="p2Oracion" rows="4"></textarea>
+
+<label class="label-primary" for="p2Participaciones">
+Participaciones (una por línea):
+</label>
+<textarea id="p2Participaciones" rows="4"></textarea>
+
+<label class="label-primary" for="p2Adoracion">Alabanzas de adoración:</label>
+<input type="text" id="p2Adoracion">
+
+<label class="label-primary" for="p2Mensaje">Mensaje:</label>
+<input type="text" id="p2Mensaje" placeholder="Ej: Pastor Marvin Oliva">
 
 
     </form>
