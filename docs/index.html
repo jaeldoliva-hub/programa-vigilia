@@ -2,21 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Generador de Vigilia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Vigilia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h1>Generador de Vigilia</h1>
+  <h1>Programa de Vigilia</h1>
 
-  <!-- HEADER -->
   <label class="label-primary">Lema de la Vigilia</label>
-  <input id="vigiliaTitulo" placeholder="[lema de la vigilia]">
+  <input id="vigiliaTitulo" placeholder="Ej: Velad y Orad">
 
   <label class="label-primary">Fecha</label>
   <input type="date" id="serviceDate">
+
+  <hr>
 
   <h2>PARTE 1</h2>
 
@@ -33,16 +34,18 @@
   <input id="p1Ofrendas">
 
   <label>Oración (una por línea)</label>
-  <textarea id="p1Oracion" placeholder="[petición], [nombre]"></textarea>
+  <textarea id="p1Oracion"></textarea>
 
   <label>Participaciones (una por línea)</label>
-  <textarea id="p1Participaciones" placeholder="[Hnos y contexto]"></textarea>
+  <textarea id="p1Participaciones"></textarea>
 
   <label>Mensaje</label>
   <input id="p1Mensaje">
 
-  <label>Bocadillos (opcional)</label>
+  <label>Bocadillos</label>
   <input id="bocadillos">
+
+  <hr>
 
   <h2>PARTE 2</h2>
 
@@ -67,13 +70,11 @@
   <label>Mensaje</label>
   <input id="p2Mensaje">
 
-  <label>Ministración (opcional)</label>
-  <input id="ministracion">
-
   <button id="generateBtn">Generar Mensaje</button>
-    <textarea id="whatsappMessage" readonly></textarea>
+  <button id="sendWhatsAppBtn">Enviar por WhatsApp</button>
 
-  </a>
+  <label class="label-secondary">Salida WhatsApp</label>
+  <textarea id="whatsappMessage" rows="18"></textarea>
 </div>
 
 <script src="script.js"></script>
