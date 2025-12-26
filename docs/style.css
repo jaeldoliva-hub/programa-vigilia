@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   /* Background image with fallback color */
-  background-color: #ff7f50;
+  background-color: #b4cded;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed; /* optional: makes background stay when scrolling */
@@ -96,7 +96,7 @@ button {
   padding: 17px;
   width: 100%;
   font-size: 16px;
-  background-color: #0170a8;
+  background-color: #246eb9;
   color: white;
   border: none;
   border-radius: 4px;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover {
-  background-color: #29b0f3;
+  background-color: #7ea172;
 }
 
 /* Debug button: less prominent but accessible */
@@ -169,6 +169,7 @@ a {
 
 /* QR area styling */
 #qrArea img { width: 200px; height: 200px; }
+
 
 
 
