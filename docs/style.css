@@ -1,24 +1,24 @@
 :root {
-  --primary: #246EB9;
+  --primary: #FFA400;
   --accent: #56203D;
   --success: #7EA172;
   --soft: #B4CDED;
-  --highlight: #FFA400;
+  --highlight: #246EB9;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, var(--soft), #fff);
-  margin: 20px;
+  background: linear-gradient(135deg, var(--soft), white);
+  padding: 20px;
 }
 
 .container {
-  max-width: 520px;
+  max-width: 560px;
   background: white;
+  padding: 24px;
+  border-radius: 12px;
   margin: auto;
-  padding: 22px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -27,24 +27,23 @@ h1 {
 }
 
 h2 {
-  margin-top: 30px;
   color: var(--accent);
-  border-bottom: 2px solid var(--soft);
+  margin-top: 28px;
 }
 
 label {
-  margin-top: 14px;
-  display: block;
+  margin-top: 12px;
   font-weight: 600;
-  color: var(--primary);
+  display: block;
 }
 
 input, textarea {
   width: 100%;
+  margin-top: 4px;
   padding: 10px;
-  margin-top: 6px;
   border-radius: 6px;
   border: 1px solid var(--soft);
+  box-sizing: border-box;
 }
 
 textarea {
@@ -52,28 +51,25 @@ textarea {
 }
 
 button {
-  width: 100%;
-  margin-top: 22px;
+  margin-top: 20px;
   padding: 14px;
+  width: 100%;
+  background: var(--primary);
   border: none;
   border-radius: 8px;
-  background: var(--primary);
+  font-size: 16px;
   color: white;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover {
-  background: #1e5fa0;
+  background: #e69500;
 }
 
-button.secondary {
-  background: var(--success);
-}
-
-#whatsappMessage {
-  margin-top: 18px;
-  background: #f8fafc;
-  border-left: 4px solid var(--highlight);
-  font-family: monospace;
+hr {
+  margin: 24px 0;
+  border: none;
+  height: 1px;
+  background: var(--soft);
 }
