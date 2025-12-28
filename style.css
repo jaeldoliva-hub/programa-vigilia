@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   /* Background image with fallback color */
-  background:linear-gradient(#0000db, #000065);
+  background:linear-gradient(#ffa500, #b17200);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll; /* optional: makes background stay when scrolling */
@@ -202,3 +202,4 @@ a {
 #qrArea img { width: 200px; height: 200px; }
 
 #qrArea p { font-size: 14px; color: #333; margin-top: 8px; }
+
