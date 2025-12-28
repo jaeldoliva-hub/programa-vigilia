@@ -1,7 +1,7 @@
 /* ===== Global ===== */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e0b45e, #c8752d);
+  background: linear-gradient(135deg, #e0b45e, #ba550d);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 20px;
@@ -23,7 +23,7 @@ html::before {
 .container {
   max-width: 475px;
   margin: auto;
-  background: #d59546;
+  background: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(34, 89, 49, 0.25);
@@ -81,7 +81,7 @@ textarea#whatsappMessage {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 2px solid #c8752d;
+  border: 2px solid grey;
   border-radius: 6px;
   background: #fffaf0;
   color: #225931;
@@ -209,3 +209,4 @@ a {
     font-size: 15px;
   }
 }
+
