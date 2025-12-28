@@ -1,11 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   /* Background image with fallback color */
-  background-color: #ffa91f;
-  background-image: url("https://jaeldoliva-hub.github.io/my-website/bg2.jpg");
+  background:linear-gradient(#0000db, #000065);
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed; /* optional: makes background stay when scrolling */
+  background-attachment: scroll; /* optional: makes background stay when scrolling */
   background-size: cover; /* cover entire viewport */
   margin: 20px;
   padding: 20px;
@@ -201,4 +200,5 @@ a {
 
 /* QR area styling */
 #qrArea img { width: 200px; height: 200px; }
+
 #qrArea p { font-size: 14px; color: #333; margin-top: 8px; }
