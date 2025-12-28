@@ -21,13 +21,12 @@ html::before {
 
 /* ===== Main Container ===== */
 .container {
-  max-width: 475px;
+ max-width: 475px;
   margin: auto;
   background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(34, 89, 49, 0.25);
-  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* ===== Headings ===== */
@@ -209,4 +208,5 @@ a {
     font-size: 15px;
   }
 }
+
 
