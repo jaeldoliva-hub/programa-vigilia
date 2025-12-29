@@ -51,7 +51,7 @@ function buildFinalMessage() {
   const lema = getValue('Lema');
   const fecha = formatDateToSpanishTitle(getValue('serviceDate'));
 
-  msg.push(`*Vigilia ${lema}*`);
+  msg.push(`*Vigilia* ${lema}`);
   msg.push(`_${fecha}_`);
   msg.push('');
 
@@ -149,3 +149,4 @@ function autoGrow(el) {
   el.style.height = 'auto';
   el.style.height = el.scrollHeight + 'px';
 }
+
