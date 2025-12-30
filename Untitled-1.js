@@ -135,7 +135,7 @@ p2.push(`_Ministracion_ ${ministracion}`);
 ================================ */
 
 function sendToWhatsApp() {
-  const message = buildFinalMessage();
+  const message = buildfinalMessage();
     const url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
     window.open(url, '_blank');
 }
@@ -149,4 +149,5 @@ function autoGrow(el) {
   el.style.height = 'auto';
   el.style.height = el.scrollHeight + 'px';
 }
+
 
